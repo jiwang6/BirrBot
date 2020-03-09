@@ -11,13 +11,13 @@ function respond() {
   // (request.text && botRegex.test(request.text))
   // weekday response
   // if (date.getHours() == 20 && (date.getDay != 5 || date.getDay != 6))
-  if (date.getHours() == 21 && date.getMinutes >= 41 && date.getMinutes <= 42) { 
+  if (0) { 
     this.res.writeHead(200);
     postMessage();
     this.res.end();
 
   // weekend res
-  } else if (request.text && botRegex.test(request.text)) { // (date.getHours() == 20)
+  } else if (0) { // (date.getHours() == 20)
     this.res.writeHead(200);
     postMessage();
     this.res.end();
