@@ -68,4 +68,4 @@ function postMessage() {
 
 exports.respond = respond;
 
-//postMessage();
+postMessage();
