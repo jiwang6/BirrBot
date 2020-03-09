@@ -2,24 +2,17 @@ var HTTPS = require('https');
 
 var botID = process.env.BOT_ID;
 
+// var botID = '5fdff496ef5e210bb66befa88c';
+
 var date = new Date();
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/f1$/;
+      botRegex = /^\/meals$/;
 
-  // (request.text && botRegex.test(request.text))
-  // weekday response
-  // if (date.getHours() == 20 && (date.getDay != 5 || date.getDay != 6))
-  if (date.getHours() == 21 && date.getMinutes >= 41 && date.getMinutes <= 42) { 
+  if (request.text && botRegex.test(request.text)) { 
     this.res.writeHead(200);
-    postMessage();
-    this.res.end();
-
-  // weekend res
-  } else if (request.text && botRegex.test(request.text)) { // (date.getHours() == 20)
-    this.res.writeHead(200);
-    postMessage();
+    setInterval(postMessage(),10000);
     this.res.end();
   } else {
     console.log("don't care");
@@ -31,7 +24,7 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = 'sign the form 1 please';
+  botResponse = 'https://drive.google.com/file/d/1ParNegKTHfQFbgfcBWuw-ZwT6vtsVyMt/view?usp=sharing';
 
   options = {
     hostname: 'api.groupme.com',
@@ -65,3 +58,4 @@ function postMessage() {
 
 
 exports.respond = respond;
+
