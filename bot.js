@@ -2,7 +2,7 @@ var HTTPS = require('https');
 
 var botID = process.env.BOT_ID;
 
- var date = new Date();
+var date = new Date();
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
@@ -11,13 +11,16 @@ function respond() {
   // (request.text && botRegex.test(request.text))
   // weekday response
   // if (date.getHours() == 20 && (date.getDay != 5 || date.getDay != 6))
-  if ((request.text && botRegex.test(request.text)) || date.getHours() == 21 && date.getMinutes == 10) { 
+  if (date.getHours() == 21) { 
     this.res.writeHead(200);
     postMessage();
     this.res.end();
+
   // weekend res
-  } else if (1) { // 
-  
+  } else if (request.text && botRegex.test(request.text)) { // (date.getHours() == 20)
+    this.res.writeHead(200);
+    postMessage();
+    this.res.end();
   } else {
     console.log("don't care");
     this.res.writeHead(200);
