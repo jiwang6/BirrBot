@@ -53,6 +53,8 @@ function postMessage2() {
     method: 'POST'
   };
 
+//  var botID = '5fdff496ef5e210bb66befa88c' // wack ass method
+
   body = {
     "bot_id" : '5fdff496ef5e210bb66befa88c', // change to LunchBot botID after test tonight
     "text" : botResponse
