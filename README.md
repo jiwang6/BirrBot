@@ -1,5 +1,5 @@
 # BullBot
-The original GroupMe bot for form-1 reminders, boxed lunch reminders, and mitch's menus. More functionality coming soon <sup>tm</sup>.
+The original GroupMe bot for form-1 reminders, boxed lunch reminders, and mitch's menus. More functionality coming soon<sup>tm</sup>.
 
 ## Bot Functionality 
 Typing /meals in the upper 3 gc will send a spreadsheet for the meals of every month.
