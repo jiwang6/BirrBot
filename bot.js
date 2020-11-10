@@ -8,16 +8,11 @@ var date = new Date();
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex0 = /^\/ahaha$/,
-	  botRegex1 = /^\/sendushome$/;
+      botRegex = /^\/ahaha$/;
 
-  if (request.text && botRegex0.test(request.text)) { 
+  if (request.text && botRegex.test(request.text)) { 
     this.res.writeHead(200);
-    postMessage(0);
-    this.res.end();
-  } else if(request.text && botRegex1.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage1(1);
+    postMessage();
     this.res.end();
   } else {
     console.log("don't care");
@@ -26,46 +21,10 @@ function respond() {
   }
 }
 
-function postMessage(choice) {
+function postMessage() {
   var botResponse, options, body, botReq;
 
-  if (choice == 0) {
-	  botResponse = newJoke();
-  } else if (choice == 1) {
-	  botResponse = 'no, stop asking or I\'ll open an honor case against you.';
-  }
-  options = {
-    hostname: 'api.groupme.com',
-    path: '/v3/bots/post',
-    method: 'POST'
-  };
-
-  body = {
-    "bot_id" : botID,
-    "text" : botResponse
-  };
-
-  console.log('sending ' + botResponse + ' to ' + botID);
-
-  botReq = HTTPS.request(options, function(res) {
-      if(res.statusCode == 202) {
-        //neat
-      } else {
-        console.log('rejecting bad status code ' + res.statusCode);
-      }
-  });
-
-  botReq.on('error', function(err) {
-    console.log('error posting message '  + JSON.stringify(err));
-  });
-  botReq.on('timeout', function(err) {
-    console.log('timeout posting message '  + JSON.stringify(err));
-  });
-  botReq.end(JSON.stringify(body));
-}
-  var botResponse, options, body, botReq;
-
-  botResponse = 'stop asking';
+  botResponse = newJoke();
 
   options = {
     hostname: 'api.groupme.com',
@@ -106,4 +65,3 @@ function newJoke(){
 
 
 exports.respond = respond;
-
