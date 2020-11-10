@@ -8,7 +8,7 @@ var date = new Date();
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/meals$/;
+      botRegex = /^\/joke$/;
 
   if (request.text && botRegex.test(request.text)) { 
     this.res.writeHead(200);
