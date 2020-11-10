@@ -26,7 +26,7 @@ function respond() {
   }
 }
 
-function postMessage(var choice) {
+function postMessage(choice) {
   var botResponse, options, body, botReq;
 
   if (choice == 0) {
