@@ -6,8 +6,6 @@ var botID = '8b672c3b569a3771b1a3272d53';
 
 var date = new Date();
 
-var jokeText = "error";
-
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/ahaha$/;
@@ -25,8 +23,8 @@ function respond() {
 
 function postMessage() {
   var botResponse, options, body, botReq;
-  getJoke();
-  botResponse = jokeText;
+
+  botResponse = getJoke();
 
   options = {
     hostname: 'api.groupme.com',
@@ -79,14 +77,12 @@ function getJoke() {
     // extract the joke text
     const joke = data.joke;
     // do the replacement
-    jokeText = joke;
+    return joke;
 
-    /* make the tweetBtn(.tweet-btn link) work by setting href */
-    // create tweet link with joke
   }).catch(function(error) {
+    // if some error occured
     console.log(error);
   });
 }
-
 
 exports.respond = respond;
