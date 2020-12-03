@@ -56,7 +56,22 @@ function postMessage() {
   botReq.end(JSON.stringify(body));
 }
 
-var jokes= ['Guess the number of programmers it takes to change a light bulb? Zero its a hardware problem','There are only 10 kinds of people in this world: those who know binary and those who don’t.','Real programmers count from 0.', 'Why did the programmer quit his job? Because he didnt get arrays.', 'A foo walks into a bar takes a look around and says Hello World','0 is false 1 is true right? 1','Things arent always #000000 and #FFFFFF.','What is the most used language in programming? Profanity','!False its funny because its True','You had me at Hello World','2b||!2b','Yesterday I changed the name on my wifi to Hack if you can. Today I found it named Challenge Accepted','A programmer is a person who fixed a problem that you didnt know you had in a way you dont understand','How can you tell if a computer geek is an extrovert? They stare at your shoes when you talk instead of their own.','I would love to change the world but they wont give me the source code.','If at first you dont succedd call it version 1.0','Computers make very fast very accurate mistakes','I farted in the Apple store and everyone got mad at me. Not my fault they dont have Windows.','Knock Knock... Whos there? Art... Art Who? R2D2','Hilarious and amazingly true thing: if a pizza has a radius (z) and a depth (a) that pizzas volume can be defined Pi*z*z*a.']
+var jokes= ['There are 16 kinds of people in the world: those who understand hexidecimal, those who don’t, and F the rest.',
+            'Why did the programmer quit his job? Because he didnt get arrays.',
+            'How can you tell if a computer geek is an extrovert? They stare at your shoes when you talk instead of their own.',
+            'If at first you dont succeed call it version 1.0',
+            'Never trust atoms; they make up everything!',
+            'You gotta hand it to short people ... because they can’t reach it.',
+            'The thief that stole my iPhone should Face-Time.',
+            'I sold my vaccuum clearner today; all it was doing was collecting dust.',
+            'Why do bees have sticky hair? Because they use honeycombs.',
+            'My wife emailed me pictures of my wedding but I couldn’t open the files. I always have trouble with emotional attachments.',
+            '\"I will get an A in 350\"',
+            'Last night, I had a dream that I weighed less than a thousandth of a gram... I was like, 0mg.',
+            'My friend said he couldn’t afford to pay his huge water bill. I sent him a \"Get Well Soon!\" card.',
+            'Did you know ... you can actually listen to the blood in your veins? You just have to listen varicose-ly',
+            'I wanted to study Computer Science but then I stopped... Turns out its just a sudo science.'
+           ]
 
 function newJoke(){
   var randomNumber=Math.floor(Math.random()*(20));
